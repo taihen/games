@@ -8,4 +8,11 @@ export const GAMES = [
     icon: "🐍",
     path: "snake/",
   },
+  {
+    id: "2048",
+    title: "2048",
+    desc: "Slide tiles, merge equal numbers, reach 2048. Arrows or swipe.",
+    icon: "🔢",
+    path: "2048/",
+  },
 ];
