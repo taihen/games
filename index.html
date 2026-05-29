@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Games</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+    <header class="border-b border-slate-800">
+      <div class="mx-auto max-w-5xl px-6 py-10">
+        <h1 class="text-4xl font-bold tracking-tight">🎮 Games</h1>
+        <p class="mt-2 text-slate-400">Simple games. Pick one. Play in the browser.</p>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-5xl px-6 py-10">
+      <div id="grid" class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3"></div>
+    </main>
+
+    <footer class="mx-auto max-w-5xl px-6 py-8 text-sm text-slate-500">
+      Built with vanilla JS. Source on
+      <a href="https://github.com/taihen/games" class="underline hover:text-slate-300">GitHub</a>.
+    </footer>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
