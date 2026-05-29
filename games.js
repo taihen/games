@@ -22,4 +22,11 @@ export const GAMES = [
     icon: "💣",
     path: "minesweeper/",
   },
+  {
+    id: "flappy",
+    title: "Flap",
+    desc: "Tap to flap, dodge the pipes. One button, endless.",
+    icon: "🐤",
+    path: "flappy/",
+  },
 ];
