@@ -15,4 +15,11 @@ export const GAMES = [
     icon: "🔢",
     path: "2048/",
   },
+  {
+    id: "minesweeper",
+    title: "Minesweeper",
+    desc: "Clear the field without hitting a mine. Click reveal, flag the rest.",
+    icon: "💣",
+    path: "minesweeper/",
+  },
 ];
