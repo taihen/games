@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <title>Boulder Dash</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='80'>🪨</text></svg>" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="min-h-screen touch-none select-none bg-slate-950 text-slate-100 antialiased">
+    <div class="mx-auto flex max-w-3xl flex-col items-center px-3 py-6">
+      <div class="flex w-full items-center justify-between">
+        <a href="../" class="text-sm text-slate-400 underline hover:text-slate-200">← All games</a>
+        <button id="reset" class="rounded-lg bg-slate-800 px-3 py-1 text-sm font-semibold hover:bg-slate-700">
+          Restart level
+        </button>
+      </div>
+
+      <h1 class="mt-4 text-3xl font-bold">🪨 Boulder Dash</h1>
+
+      <div class="mt-3 flex flex-wrap items-center justify-center gap-3 text-sm font-semibold">
+        <span class="rounded bg-slate-800 px-3 py-1">Level <span id="level">1</span>/<span id="levels">1</span></span>
+        <span class="rounded bg-slate-800 px-3 py-1">💎 <span id="diamonds">0</span>/<span id="need">0</span></span>
+        <span class="rounded bg-slate-800 px-3 py-1">⏱ <span id="time">0</span></span>
+        <span class="rounded bg-slate-800 px-3 py-1">❤ <span id="lives">3</span></span>
+      </div>
+
+      <canvas id="board" class="mt-4 rounded-lg bg-black"></canvas>
+
+      <p class="mt-3 text-center text-sm text-slate-400">
+        Arrows / WASD to move &amp; dig. Push boulders sideways. Collect 💎 to open the exit 🚪.
+        Don't get crushed or touched by 👾.
+      </p>
+
+      <div id="overlay" class="mt-3 hidden rounded-lg bg-slate-800 px-4 py-2 text-center"></div>
+    </div>
+
+    <script src="game.js"></script>
+  </body>
+</html>

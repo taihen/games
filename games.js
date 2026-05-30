@@ -29,4 +29,11 @@ export const GAMES = [
     icon: "🐤",
     path: "flappy/",
   },
+  {
+    id: "boulderdash",
+    title: "Boulder Dash",
+    desc: "Dig dirt, collect diamonds, dodge falling boulders and fireflies. 80s classic.",
+    icon: "🪨",
+    path: "boulderdash/",
+  },
 ];
