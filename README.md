@@ -1,20 +1,10 @@
 # 🎮 games
 
-Simple browser games. Vanilla HTML/CSS/JS — no build step, no framework.
+**Mostly vibe coded for educational purposes**
 
-Live: https://taihen.github.io/games/
+Some simple browser games, implemented in vanilla HTML/CSS/JS - no build step, no framework.
 
-## Layout
-
-```
-.
-├── index.html        # landing page, renders game cards
-├── app.js            # reads the registry, builds the grid
-├── games.js          # GAME REGISTRY — add games here
-└── snake/            # one self-contained folder per game
-    ├── index.html
-    └── snake.js
-```
+Live: https://taihen.org/games/
 
 ## Run locally
 
@@ -34,10 +24,3 @@ python3 -m http.server
    ```js
    { id: "mygame", title: "My Game", desc: "…", icon: "🎯", path: "mygame/" }
    ```
-
-Push to `main` — GitHub Actions deploys to Pages automatically.
-
-## Styling
-
-Tailwind via play-CDN (`<script src="https://cdn.tailwindcss.com">`). No build.
-Note: the CDN logs a "not for production" console warning — fine for this hobby site.
