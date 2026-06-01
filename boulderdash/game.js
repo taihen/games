@@ -26,31 +26,12 @@
   };
 
   // ===========================================================
-  // LEVELS — replace / extend with your 5 maps. Format:
-  //   { time: <seconds>, need: <diamonds to open exit>, map: `...` }
+  // LEVELS come from levels.js (window.BD_LEVELS), loaded before this script.
+  // Each: { name, time, need, map } where map is a newline-joined grid.
   // Legend: W steel  . dirt  (space) empty  r boulder  d diamond
-  //         P player(one)  E exit  f firefly.  Rows must be equal width.
+  //         P player(one)  E exit  f firefly.  Rows are equal width.
   // ===========================================================
-  const LEVELS = [
-    {
-      time: 150,
-      need: 7,
-      map: [
-        "WWWWWWWWWWWWWWWW",
-        "W.P.......d....W",
-        "W..rrr......rr.W",
-        "W...d.......d..W",
-        "W....WWWW......W",
-        "W.d..r....r..d.W",
-        "W....d....d....W",
-        "W..rr...f..rr..W",
-        "W.d..........d.W",
-        "W.....rrrr....EW",
-        "W...d......d...W",
-        "WWWWWWWWWWWWWWWW",
-      ].join("\n"),
-    },
-  ];
+  const LEVELS = window.BD_LEVELS || [];
 
   // ---- DOM ----
   const canvas = document.getElementById("board");
@@ -122,6 +103,11 @@
 
     syncHud();
     render();
+
+    if (lvl.name) {
+      showOverlay(`Level ${n + 1}: ${lvl.name}`);
+      setTimeout(() => { if (state === "play") hideOverlay(); }, 1400);
+    }
   }
 
   function syncHud() {
