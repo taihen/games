@@ -36,4 +36,11 @@ export const GAMES = [
     icon: "🪨",
     path: "boulderdash/",
   },
+  {
+    id: "jewels",
+    title: "Jewels",
+    desc: "Swap gems to line up 3+ of a kind. Chain cascades for big scores.",
+    icon: "💎",
+    path: "jewels/",
+  },
 ];

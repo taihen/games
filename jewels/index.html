@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <title>Jewels</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='80'>💎</text></svg>" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .gem {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border-radius: 0.5rem;
+        background: rgba(255, 255, 255, 0.04);
+        transition: transform 90ms ease, background 90ms ease;
+      }
+      .gem:hover { background: rgba(255, 255, 255, 0.1); }
+      .gem.sel {
+        background: rgba(250, 204, 21, 0.25);
+        outline: 2px solid #facc15;
+        transform: scale(1.06);
+      }
+      .gem.clear { animation: clear 180ms ease forwards; }
+      .gem.shake { animation: shake 200ms ease; }
+      @keyframes clear { to { transform: scale(0.2); opacity: 0; } }
+      @keyframes shake {
+        0%,100% { transform: translateX(0); }
+        25% { transform: translateX(-4px); }
+        75% { transform: translateX(4px); }
+      }
+    </style>
+  </head>
+  <body class="min-h-screen touch-none select-none bg-slate-950 text-slate-100 antialiased">
+    <div class="mx-auto flex max-w-md flex-col items-center px-4 py-8">
+      <div class="flex w-full items-center justify-between">
+        <a href="../" class="text-sm text-slate-400 underline hover:text-slate-200">← All games</a>
+        <div class="flex gap-3 text-center">
+          <div class="rounded-lg bg-slate-800 px-3 py-1">
+            <div class="text-xs text-slate-400">SCORE</div>
+            <div id="score" class="text-lg font-bold">0</div>
+          </div>
+          <div class="rounded-lg bg-slate-800 px-3 py-1">
+            <div class="text-xs text-slate-400">BEST</div>
+            <div id="best" class="text-lg font-bold">0</div>
+          </div>
+        </div>
+      </div>
+
+      <h1 class="mt-6 text-3xl font-bold">💎 Jewels</h1>
+
+      <div id="board" class="mt-6 grid gap-1 rounded-xl bg-slate-800 p-2"></div>
+
+      <button id="new" class="mt-5 rounded-lg bg-emerald-600 px-4 py-2 font-semibold hover:bg-emerald-500">
+        New game
+      </button>
+
+      <p class="mt-4 text-center text-sm text-slate-400">
+        Click a gem then an adjacent one (or swipe) to swap. Line up 3+ to clear. Chains score more.
+      </p>
+    </div>
+
+    <script src="game.js"></script>
+  </body>
+</html>
